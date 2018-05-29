@@ -9,6 +9,7 @@ class DishesController < ApplicationController
 
   def new
     @dish = Dish.new
+    @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
   def create
@@ -42,7 +43,7 @@ class DishesController < ApplicationController
   private
 
   def dish_params
-    params.require(:dish).permit(:name, :description, :picture, :price, :category)
+    params.require(:dish).permit(:name, :description, :picture_url, :price, :category)
   end
 
   def set_dish
