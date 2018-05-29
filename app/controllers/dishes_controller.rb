@@ -29,6 +29,7 @@ class DishesController < ApplicationController
       redirect_to dish_path(@dish)
     else
       render :edit
+    end
   end
 
   def destroy
