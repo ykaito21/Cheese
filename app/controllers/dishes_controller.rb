@@ -17,7 +17,7 @@ class DishesController < ApplicationController
     if @dish.save
       redirect_to dish_path(@dish)
     else
-      redener :new
+      render :new
     end
   end
 
@@ -34,7 +34,7 @@ class DishesController < ApplicationController
 
   def destroy
     @dish.destroy
-    redirect_to dishes_path
+    redirect_to restaurant_dishes_path
 
   end
 
