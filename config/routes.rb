@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       resources :dishes, only: [ :index, :new, :create ]
     end
     resources :dishes, only: [ :show, :edit, :update, :destroy ] do
-      resources :order
+      resources :orders
     end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
