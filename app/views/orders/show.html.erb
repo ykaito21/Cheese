@@ -2,11 +2,20 @@
   <head>
   </head>
   <body>
-    <h1> <%= @order.dish.name %> </h1>
-    <h2> <%= @order.quantity %> </h2>
-    <h2> <$= @order.dish.price %> </h2>
-    <h2> <%= @order.dish.restaurant.name %> </h2>
-    <h2> <%= @order.dish.restaurant.address %> </h2>
-    <div> <a href="#" class="btn-treehouse">Start now</a> </div>
+    <div class="container">
+      <div class="row">
+        <div class="text-center">
+          <img src='<%= @order.dish.picture_url %>' class="img-thumbnail">
+        </div>
+      </div>
+      <div class="text-center">
+        <h2> <%= @order.dish.name %> </h2>
+        <h3> <%= @order.quantity %> </h3>
+        <h3> <%= @order.dish.price %> </h3>
+        <h3> <%= @order.dish.restaurant.name %> </h3>
+        <h3> <%= @order.dish.restaurant.address %> </h3>
+        <div> <a href="#" class="btn btn-warning">Confirm</a> </div>
+      </div>
+    </div>
   </body>
 </html>
