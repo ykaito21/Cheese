@@ -17,7 +17,7 @@ class DishesController < ApplicationController
     if @dish.save
       redirect_to dish_path(@dish)
     else
-      redener :new
+      render :new
     end
   end
 
