@@ -41,14 +41,15 @@
       <div class="row">
         <% @dishes.each do |dish| %>
           <div class="col-xs-12 col-sm-4">
+            <%= link_to dish_path(dish) do %>
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= dish.picture_url %>');">
               <div class="card-category"><%= dish.category %></div>
               <div class="card-description">
                 <h2><%= dish.name %></h2>
                 <p><%= dish.restaurant.name %>
               </div>
-              <%= link_to "", dish_path(dish) %>
             </div>
+            <% end %>
           </div>
         <% end %>
       </div>
