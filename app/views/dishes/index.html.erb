@@ -1,7 +1,4 @@
-<html>
-  <head>
-  </head>
-  <body>
+
     <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/9708/food-pizza-restaurant-eating.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');">
       <div class="banner-content">
         <h1>Cheese</h1>
@@ -10,33 +7,6 @@
       </div>
     </div>
 
-    <div class="navbar-wagon">
-      <!-- Logo -->
-      <a href="/" class="navbar-wagon-brand">
-        <img src="images/logo.png" alt="logo">
-      </a>
-
-      <!-- Right Navigation -->
-      <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-        <a href="" class="navbar-wagon-item navbar-wagon-link">Register</a>
-        <a href="" class="navbar-wagon-item navbar-wagon-link">Login</a>
-        <a href="" class="navbar-wagon-item navbar-wagon-link">Order</a>
-
-      </div>
-
-      <!-- Dropdown appearing on mobile only -->
-      <div class="navbar-wagon-item hidden-md hidden-lg">
-        <div class="dropdown">
-          <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li><a href="#">Register</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Order</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
     <div class="container">
       <div class="row">
         <% @dishes.each do |dish| %>
@@ -54,19 +24,3 @@
         <% end %>
       </div>
     </div>
-
-    <div class="footer">
-      <div class="footer-links">
-        <a href="#"><i class="far fa-github"></i></a>
-        <a href="#"><i class="far fa-instagram"></i></a>
-        <a href="#"><i class="far fa-facebook"></i></a>
-        <a href="#"><i class="far fa-twitter"></i></a>
-        <a href="#"><i class="far fa-linkedin"></i></a>
-      </div>
-      <div class="footer-copyright">
-        This footer is made with <i class="fa fa-heart"></i> at Le Wagon
-      </div>
-    </div>
-  </body>
-
-</html>
