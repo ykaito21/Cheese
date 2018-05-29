@@ -6,7 +6,7 @@
       <div class="banner-content">
         <h1>Cheese</h1>
         <p>Your daily meal inspirations</p>
-        <a class="btn btn-primary btn-lg">Start now</a>
+        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
       </div>
     </div>
 
@@ -19,9 +19,9 @@
       <!-- Right Navigation -->
       <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-        <a href="" class="navbar-wagon-item navbar-wagon-link">Host</a>
-        <a href="" class="navbar-wagon-item navbar-wagon-link">Trips</a>
-        <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
+        <a href="" class="navbar-wagon-item navbar-wagon-link">Register</a>
+        <a href="" class="navbar-wagon-item navbar-wagon-link">Login</a>
+        <a href="" class="navbar-wagon-item navbar-wagon-link">Order</a>
 
       </div>
 
@@ -30,17 +30,43 @@
         <div class="dropdown">
           <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li><a href="#">Host</a></li>
-            <li><a href="#">Trips</a></li>
-            <li><a href="#">Messagese</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Order</a></li>
           </ul>
         </div>
       </div>
     </div>
+    <div class="container">
+      <div class="row">
+        <% @dishes.each do |dish| %>
+          <div class="col-xs-12 col-sm-4">
+            <%= link_to dish_path(dish) do %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= dish.picture_url %>');">
+              <div class="card-category"><%= dish.category %></div>
+              <div class="card-description">
+                <h2><%= dish.name %></h2>
+                <p><%= dish.restaurant.name %>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
-    <div class="card-wrapper"></div>
-    <div class="card-container"></div>
-    <div class="footer"></div>
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#"><i class="far fa-github"></i></a>
+        <a href="#"><i class="far fa-instagram"></i></a>
+        <a href="#"><i class="far fa-facebook"></i></a>
+        <a href="#"><i class="far fa-twitter"></i></a>
+        <a href="#"><i class="far fa-linkedin"></i></a>
+      </div>
+      <div class="footer-copyright">
+        This footer is made with <i class="fa fa-heart"></i> at Le Wagon
+      </div>
+    </div>
   </body>
 
 </html>
