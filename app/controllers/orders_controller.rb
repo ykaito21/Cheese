@@ -1,29 +1,36 @@
 class OrdersController < ApplicationController
+before_action :set_order
 
   def index
     @orders = Order.all
   end
 
   def show
-    @dish = Dish.find(params[:id])
-    @orders.dish = @dish
+    @order.dish = Dish.find(params[:dish_id])
   end
 
 
   def create
 
     @order = Order.new(order_params)
-    @orders.dish = @dish
+    @order.dish = Dish.find(params[:dish_id])
+    @order.user = current_user
 
-    @order.save
-    redirect_to order_path(@order)
+    if @order.save
+      redirect_to order_path(@order)
+    else
+      render "dishes/show"
+    end
   end
 
 
   private
 
   def order_params
-    params.require(:order).permit(:date, :confirmation, :user_id, :dish_id)
+    params.require(:order).permit(:date, :confirmation, :quantity, :user_id, :dish_id)
+  end
 
+  def set_order
+    @order = Order.find(params[:id])
   end
 end
