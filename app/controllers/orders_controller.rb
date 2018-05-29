@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
 before_action :set_order
 
   def index
-    @orders = Order.all
+    @orders = Order.where(user: current_user)
   end
 
   def show
