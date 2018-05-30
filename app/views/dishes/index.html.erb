@@ -1,31 +1,19 @@
 
-    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/9708/food-pizza-restaurant-eating.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');">
-      <div class="banner-content">
-        <h1>Cheese</h1>
-        <p>Your daily meal inspirations</p>
-        <form class="form-inline mr-auto">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-warning" type="submit">Search</button>
-        </form>
-
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row">
-        <% @dishes.each do |dish| %>
-          <div class="col-xs-12 col-sm-4">
-            <%= link_to dish_path(dish) do %>
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path dish.photo, height: 300, width: 400, crop: :fill %>');">
-              <div class="card-category"><%= dish.category %></div>
-              <div class="card-description">
-                <h2><%= dish.name %></h2>
-                <p><%= dish.restaurant.name %>
-              </div>
-            </div>
-            <% end %>
+<%= render 'share/banner' %>
+<div class="container">
+  <div class="row">
+    <% @dishes.each do |dish| %>
+      <div class="col-xs-12 col-sm-4">
+        <%= link_to dish_path(dish) do %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path dish.photo %>');">
+          <div class="card-category"><%= dish.category %></div>
+          <div class="card-description">
+            <h2><%= dish.name %></h2>
+            <p><%= dish.restaurant.name %>
           </div>
+        </div>
         <% end %>
       </div>
-    </div>
-
+    <% end %>
+  </div>
+</div>
