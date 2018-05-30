@@ -2,6 +2,9 @@
   <h2> Edit: <%= @dish.name %> </h2>
 </div>
 <div class="container">
-
-<%= render "form", dish: @dish %>
+  <div class="row form-area">
+    <div class="form-row">
+      <%= render "form", dish: @dish %>
+    </div>
+  </div>
 </div>
