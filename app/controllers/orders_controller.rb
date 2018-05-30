@@ -1,21 +1,20 @@
 class OrdersController < ApplicationController
-before_action :set_order
+before_action :set_order, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @orders = Order.where(user: current_user)
   end
 
   def show
-    @order.dish = Dish.find(params[:dish_id])
+    @dish = Dish.find(params[:dish_id])
   end
 
 
   def create
-
+    @dish = Dish.find(params[:dish_id])
     @order = Order.new(order_params)
-    @order.dish = Dish.find(params[:dish_id])
+    @order.dish = @dish
     @order.user = current_user
-
     if @order.save
       redirect_to order_path(@order)
     else
