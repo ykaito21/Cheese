@@ -54,7 +54,7 @@ test_data_dishes = [
   description: "Plate of Bolognese, hand-made pasta",
   picture_url: "https://www.plated.com/uploads/culinary/recipe_image/file/36255/hero_YXk1g4eLQ82dIQg1DZZL_Beef_Bolognese_over_Roasted_Spaghetti_Squash___0007___HERO.jpg",
   price: 590,
-  category: "Pasta",
+  category: "Japanese",
   restaurant_id: 1
 },
 
@@ -63,7 +63,7 @@ test_data_dishes = [
   description: "Plate of real carbonara, no cream lies",
   picture_url: "https://hips.hearstapps.com/del.h-cdn.co/assets/17/03/1484784941-white-cheddar-carbonaral1.jpg",
   price: 800,
-  category: "Pasta",
+  category: "Japanese",
   restaurant_id: 1
 },
 
@@ -72,7 +72,7 @@ test_data_dishes = [
   description: "Playe of vongole with fresh clams",
   picture_url: "https://coleycooks.com/wp-content/uploads/2016/10/IMG_9051-2.jpg",
   price: 1000,
-  category: "Pasta",
+  category: "Japanese",
   restaurant_id: 1
 },
 
@@ -81,7 +81,7 @@ test_data_dishes = [
   description: "Ramen in broth stewed with pork bones",
   picture_url: "http://www.curiousnut.com/wp-content/uploads/2015/03/Tonkatsu-Ramen-Tall.jpg",
   price: 900,
-  category: "Ramen",
+  category: "Japanese",
   restaurant_id: 2
 },
 
@@ -90,7 +90,7 @@ test_data_dishes = [
   description: "Ramen in special shoyu recipe",
   picture_url: "https://assets.epicurious.com/photos/54ad70036529d92b2c046e6b/master/pass/51187270_shoyu-ramen_1x1.jpg",
   price: 870,
-  category: "Ramen",
+  category: "Japanese",
   restaurant_id: 2
 },
 
@@ -99,7 +99,7 @@ test_data_dishes = [
   description: "Ramen in miso from Hokkaido",
   picture_url: "https://www.seriouseats.com/recipes/images/2013/09/20130910-crispy-pork-miso-ramen-03-2.jpg",
   price: 870,
-  category: "Ramen",
+  category: "Japanese",
   restaurant_id: 2
 },
 
@@ -108,7 +108,7 @@ test_data_dishes = [
   description: "Home-style gourmet cheeseburger made with real beef",
   picture_url: "https://thumbs.dreamstime.com/b/homemade-gourmet-burger-side-sauce-tasty-painted-white-wood-background-sesame-seed-buns-beef-patties-salad-bright-colours-68628501.jpg",
   price: 1000,
-  category: "Burger",
+  category: "Japanese",
   restaurant_id: 3
 },
 
@@ -117,7 +117,7 @@ test_data_dishes = [
   description: "Beer-battered fish burger",
   picture_url: "http://chelseawinter.co.nz/wp-content/uploads/2013/03/Beer-battered-fish-burgers1.jpg",
   price: 1200,
-  category: "Burger",
+  category: "Japanese",
   restaurant_id: 3
 },
 
@@ -126,7 +126,7 @@ test_data_dishes = [
   description: "Chicken burger with homemade BBQ sauce",
   picture_url: "http://www.howsweeteats.com/wp-content/uploads/2011/04/bbqburgers-6.jpg",
   price: 1000,
-  category: "Burger",
+  category: "Japanese",
   restaurant_id: 3
 },
 
@@ -135,7 +135,7 @@ test_data_dishes = [
   description: "Stack of blueberry pancakes with fresh blueberries",
   picture_url: "https://hips.hearstapps.com/del.h-cdn.co/assets/17/22/4000x2666/gallery-1496168110-blueberry-buttermilk-pancakesl3.jpg?resize=768:*",
   price: 700,
-  category: "Pancakes",
+  category: "Japanese",
   restaurant_id: 4
 },
 
@@ -145,7 +145,7 @@ test_data_dishes = [
   description: "Fluffy pancakes in maple syrup and home-made whipped cream",
   picture_url: "https://truffle-assets.imgix.net/800130b9-l.png",
   price: 800,
-  category: "Pancakes",
+  category: "Japanese",
   restaurant_id: 4,
 },
 
@@ -155,7 +155,7 @@ test_data_dishes = [
   description: "Stack of chocolate pancakes with generous serving of chocolate chips",
   picture_url: "https://www.kitchentreaty.com/wp-content/uploads/2013/06/IMG_7767.jpg",
   price: 800,
-  category: "Pancakes",
+  category: "Japanese",
   restaurant_id: 4
 },
 
@@ -164,7 +164,7 @@ test_data_dishes = [
   description: "Chicken thigh meat on a skewer",
   picture_url: "https://www.spinjapan.net/wp-content/uploads/2016/02/8-Recommended-Yakitori-You-Should-Try-in-Japanmomo-e1456572858963.jpg",
   price: "200",
-  category: "Yakitori",
+  category: "Japanese",
   restaurant_id: 5,
 },
 
@@ -173,7 +173,7 @@ test_data_dishes = [
   description: "Skewered chicken meatballs",
   picture_url: "https://www.justonecookbook.com/wp-content/uploads/2014/05/Tsukune.jpg",
   price: "250",
-  category: "Yakitori",
+  category: "Japanese",
   restaurant_id: 5
 },
 
@@ -182,7 +182,7 @@ test_data_dishes = [
   description: "Skewered chicken with leeks",
   picture_url: "https://www.chopstickchronicles.com/wp-content/uploads/2016/07/Yakitori-BBQ-8.jpg",
   price: "200",
-  category: "Yakitori",
+  category: "Japanese",
   restaurant_id: 5
 }
 ]
