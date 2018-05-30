@@ -4,8 +4,6 @@ class Dish < ApplicationRecord
   validates :description, presence: true
   # mount_uploader :picture_url, PhotoUploader
   validates :category, inclusion: { in: %w(Japanese French Chinese Western Italian Spanish Indian) }
-
-  # CATEGORIES =
 end
 
 # Dish::CATEGORIES
