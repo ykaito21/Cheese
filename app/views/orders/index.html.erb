@@ -4,16 +4,21 @@
   </div>
   <div class="row">
     <% @orders.each do |order| %>
-      <div class="col-xs-12 col-sm-4">
-        <img src='<%= order.dish.picture_url %>' class="float-left">
-      </div>
-      <div class="col-sm-12 col-md-6">
-        <h3> Order: <%= order.dish.name %></h3>
-        <p> Quantity: <%= order.quantity %></p>
-        <p> Restaurant: <%= order.dish.restaurant.name %></p>
-        <p> Address: <%= order.dish.restaurant.address %></p>
-      </div>
-    <% end %>
+      <div class="row text-center">
+        <div class="dish-img-area col-xs-12 col-md-6">
+          <img src='<%= order.dish.picture_url %>' class="float-left">
+        </div>
+        <div class="dish-img-area col-xs-12 col-md-6">
+          <div class="orders-text-wrap">
+            <h3> Order: <%= order.dish.name %></h3>
+            <p> Quantity: <%= order.quantity %></p>
+            <p> Restaurant: <%= order.dish.restaurant.name %></p>
+            <p> Address: <%= order.dish.restaurant.address %></p>
+          </div>
+        </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
