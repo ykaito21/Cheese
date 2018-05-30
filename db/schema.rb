@@ -18,12 +18,13 @@ ActiveRecord::Schema.define(version: 2018_05_30_070004) do
   create_table "dishes", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.string "photo"
+    t.string "picture_url"
     t.integer "price"
     t.string "category"
     t.bigint "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
     t.index ["restaurant_id"], name: "index_dishes_on_restaurant_id"
   end
 

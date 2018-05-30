@@ -277,7 +277,7 @@ end
 
 test_data_orders.each do |order|
   new_order = Order.new(order)
-  new_order.user =  User.all.sample,
+  new_order.user =  User.all.sample
   new_order.dish =  Dish.all.sample
   new_order.save
 end
