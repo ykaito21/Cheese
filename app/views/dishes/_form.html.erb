@@ -4,10 +4,10 @@
   <%= f.input :description %>
   <%= f.input :category %>
   <%= f.input :price %>
-  <%= f.input :picture_url %>
-  <%#= f.input :picture_url_cache, as: :hidden %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
 
-  <%= f.button :submit, "Edit", class: "btn btn-warning btn-block"%>
+  <%= f.button :submit, "Add", class: "btn btn-warning btn-block"%>
 <% end %>
 <!--
 <%= simple_form_for [@restaurant, @dish] do |f| %>
