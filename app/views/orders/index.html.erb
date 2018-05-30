@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="text-center">
+    <h1> Your Orders </h1>
+  </div>
+  <div class="row">
+    <div class="float-left">
+      <img src='<%= @order.dish.picture_url %>' id="img-wrapper">
+    </div>
+  </div>
+  <div class="text-center">
+    <h2> <%= @order.dish.name %>   x <%= @order.quantity %></h2>
+    <p> Sub-total: <%= (@order.dish.price)*(@order.quantity) %> ¥ </p>
+    <p><strong> <%= @order.dish.restaurant.name %> </strong></p>
+    <p>Address: <%= @order.dish.restaurant.address %> </p>
+    <div> <a href="#" class="btn btn-warning">Confirm</a> </div>
+  </div>
+</div>
