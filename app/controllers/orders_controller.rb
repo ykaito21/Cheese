@@ -16,7 +16,8 @@ before_action :set_order, only: [ :show, :edit, :update, :destroy ]
     @order.dish = @dish
     @order.user = current_user
     if @order.save
-      redirect_to order_path(@order)
+      # redirect_to dish_order_path(@dish, @order)
+      redirect_to  orders_path
     else
       render "dishes/show"
     end
