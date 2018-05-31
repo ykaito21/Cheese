@@ -2,13 +2,8 @@ class RestaurantsController < ApplicationController
  before_action :set_restaurant, only: [ :show, :edit, :update, :destroy ]
 
   def show
-    @restaurants = Restaurant.where.not(latitude: nil, longitude: nil)
-    @markers = @restaurants.map do |flat|
-      {
-        lat: flat.latitude,
-        lng: flat.longitude
-      }
-    end
+
+    @markers = [{ lat: @restaurant.latitude, lng: @restaurant.longitude }]
   end
 
   def new
