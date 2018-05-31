@@ -1,9 +1,8 @@
 <div class="container">
   <div class="text-center">
-    <h1> Your Order </h1>
+    <h1> Your Orders </h1>
   </div>
   <div class="row">
-    <table>
       <% @orders_sorted.each do |order| %>
         <div class="row text-center">
           <div class="dish-img-area col-xs-12 col-md-4">
@@ -20,7 +19,6 @@
           </div>
         </div>
       <% end %>
-    </table>
   </div>
 </div>
 
