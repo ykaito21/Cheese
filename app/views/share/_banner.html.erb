@@ -2,21 +2,7 @@
       <div class="banner-content">
         <h1>Cheese</h1>
         <p>Get inspired. Pre-order your meal.</p>
-        <form class="form-inline">
-            <%= form_tag root_path, method: "get" do %>
-            <div class="form-row">
-              <div class="form-group">
-                <%= text_field_tag "query", "", class: 'form-control' %>
-              </div>
-              <div class="form-group">
-                <%= select_tag "category", options_for_select(Dish::CATEGORY), class: 'form-control' %>
-              </div>
-              <div class="form-group">
-                <%= submit_tag "Search", class: 'btn btn-warning' %>
-              </div>
-            </div>
-            <% end %>
-        </form>
+        <%= render 'shared/search' %>
 
       </div>
     </div>
