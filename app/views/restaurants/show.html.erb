@@ -1,8 +1,8 @@
 <div class="container restaurantshow">
     <h2><%= @restaurant.name %>
       <% if current_user == @restaurant.user %>
-      <%= link_to "Edit", edit_restaurant_path(@restaurant), class: "btn btn-secondary btn-lg" %><%= link_to 'Delete', restaurant_path(@restaurant), class: "btn btn-secondary btn-lg", method: :delete %> </h2>
-       <% end %>
+      <%= link_to "Edit", edit_restaurant_path(@restaurant), class: "btn btn-secondary btn-lg" %><%= link_to 'Delete', restaurant_path(@restaurant), class: "btn btn-secondary btn-lg", method: :delete %> <% end %>
+    </h2>
     <table class="table table-bordered">
       <tbody>
         <tr>
