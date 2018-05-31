@@ -1,25 +1,24 @@
 <div class="container">
   <div class="text-center">
-    <h1> Your Order </h1>
+    <h1> Your Orders </h1>
   </div>
   <div class="row">
-    <% @orders_sorted.each do |order| %>
-      <div class="row text-center">
-        <div class="dish-img-area col-xs-12 col-md-6">
-          <img src='<%= order.dish.photo %>' class="float-left">
-        </div>
-        <div class="dish-img-area col-xs-12 col-md-6">
-          <div class="orders-text-wrap">
-            <h3> Order: <%= order.dish.name %></h3>
-            <p> Quantity: <%= order.quantity %></p>
-            <p> Restaurant: <%= order.dish.restaurant.name %></p>
-            <p> Address: <%= order.dish.restaurant.address %></p>
-            <p> Reservation: <%= order.date %>
+      <% @orders_sorted.each do |order| %>
+        <div class="row text-center">
+          <div class="dish-img-area col-xs-12 col-md-4">
+            <img src='<%= order.dish.photo %>' class="float-left" id="dish-index-picture">
+          </div>
+          <div class="dish-img-area col-xs-12 col-md-6">
+            <div class="orders-text-wrap">
+              <h3> Order: <%= order.dish.name %></h3>
+              <p> Quantity: <%= order.quantity %></p>
+              <p> Restaurant: <%= order.dish.restaurant.name %></p>
+              <p> Address: <%= order.dish.restaurant.address %></p>
+              <p> Reservation: <%= order.date %>
+            </div>
           </div>
         </div>
-        </div>
       <% end %>
-    </div>
   </div>
 </div>
 
