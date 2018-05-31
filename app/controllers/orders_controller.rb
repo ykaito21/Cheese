@@ -24,6 +24,10 @@ before_action :set_order, only: [ :show, :edit, :update, :destroy ]
     end
   end
 
+  def destroy
+    @order.destroy
+    redirect_to orders_path
+  end
 
   private
 
