@@ -1,39 +1,33 @@
 <div class="container dishshow">
-  <div class="row">
-    <div class="col-xs-12">
-      <h2><%= @dish.name %><span class="price">¥<%= @dish.price %></span></h2>
-      <p><%= @dish.description %></p>
+    <div class="info-container row">
+      <div class="col-xs-12">
+        <h2><%= @dish.name %><span class="price">¥<%= @dish.price %></span> [ <%= link_to @dish.restaurant.name, restaurant_path(@restaurant) %> ] </h2>
+        <p><%= @dish.description %></p>
+      </div>
+      <div class="dish-img-area col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+        <%= cl_image_tag @dish.photo %>
+      </div>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="dish-img-area col-sm-12 col-md-6">
-      <%= cl_image_tag @dish.photo %>
-    </div>
-
-    <div class="col-sm-12 col-md-6">
-      <h3><%= @dish.restaurant.name %></h3>
-      <h4>address</h4>
-      <p><%= @dish.restaurant.address %></p>
-    </div>
-    <div class="col-sm-12 col-md-6">
-
-      <p><%= link_to "Check This Restaurant", restaurant_path(@restaurant) %></p>
-
-    </div>
-  </div>
-  <div class="row form-area">
-      <div class="form-row">
-        <div class="col-xs-12 col-md-12 form-dish-name">
-          <p class="form-item-title">
-          <%= @dish.name %><span class="price">¥<%= @dish.price %></span>
-          </p>
-        </div>
-        <div>
-          <%= render "orders/form", order: @order %>
+    <div class="row">
+      <div class="dish-img-area col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+        <div id="map" style="width: 100%; height: 300px;"data-markers="<%= @markers.to_json %>">
         </div>
       </div>
+    </div>
+  <div class="row form-area">
+    <div class="form-row">
+      <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+      <div class="form-dish-name">
+        <p class="form-item-title">
+          <%= @dish.name %><span class="price">¥<%= @dish.price %></span>
+        </p>
+      </div>
+      <div>
+        <%= render "orders/form", order: @order %>
+      </div>
+    </div>
+    </div>
   </div>
 </div>
 
-<div id="map" style="width: 100%; height: 300px;"data-markers="<%= @markers.to_json %>"></div>
+
