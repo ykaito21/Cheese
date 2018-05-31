@@ -14,5 +14,6 @@
     <p><strong> <%= @order.dish.restaurant.name %> </strong></p>
     <p>Address: <%= @order.dish.restaurant.address %> </p>
     <div> <a href="#" class="btn btn-warning">Confirm</a> </div>
+    <div> <%= link_to 'Delete', dish_order_path(@restaurant), class: "btn btn-secondary btn-lg", method: :delete %> </div>
   </div>
 </div>
