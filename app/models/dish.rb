@@ -3,7 +3,8 @@ class Dish < ApplicationRecord
   belongs_to :restaurant
   validates :name, presence: true
   validates :description, presence: true
-  validates :category, inclusion: { in: %w(Japanese French Chinese Western Italian Spanish Indian Others) }
+  CATEGORY = %w(Japanese French Chinese Western Italian Spanish Indian Others)
+  validates :category, inclusion: { in: CATEGORY }
   mount_uploader :photo, PhotoUploader
 end
 
