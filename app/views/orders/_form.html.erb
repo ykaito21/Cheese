@@ -1,9 +1,5 @@
 <%= simple_form_for [@dish, @order] do |f| %>
-  <%= f.label :quantity %>
-  <%= f.text_field :quantity %>
-
-  <%= f.label :date %>
-  <%= f.input :date %>
-
-  <%= f.submit %>
+  <%= f.input :quantity %>
+  <%= f.input :date, id: "order_date" %>
+  <%= f.button :submit, "Order", class: "btn btn-warning btn-block"%>
 <% end %>
