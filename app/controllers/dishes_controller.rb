@@ -5,6 +5,7 @@ class DishesController < ApplicationController
   end
 
   def show
+    @restaurant = @dish.restaurant
     @order = Order.new
   end
 
