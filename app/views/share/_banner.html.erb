@@ -2,16 +2,14 @@
       <div class="banner-content">
         <h1>Cheese</h1>
         <p>Get inspired. Pre-order your meal.</p>
-        <form class="form-inline mr-auto">
-<!--             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
-            <%= form_tag root_path, method: :get do %>
-              <%= text_field_tag :query,
-                params[:query],
-                class: "form-control mr-sm-2",
-                placeholder: "Search Dishes"
-              %>
+        <form class="form-inline">
+           <div class="form-group mb-2 text-dark">
+            <%= form_tag root_path, method: "get" do %>
+              <%= text_field_tag(:query) %>
+              <%= select_tag(:category, options_for_select(Dish::CATEGORY)) %>
+              <%= submit_tag("Search") %>
             <% end %>
-            <button class="btn btn-warning" type="submit">Search</button>
+          </div>
         </form>
 
       </div>
