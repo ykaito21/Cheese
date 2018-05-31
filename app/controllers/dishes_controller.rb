@@ -1,7 +1,12 @@
 class DishesController < ApplicationController
   before_action :set_dish, only: [ :show, :edit, :update, :destroy ]
   def index
-    @dishes = Dish.all
+    if params[:query].present? || params[:category].present?
+      sql_query = "name ILIKE :query AND category ILIKE :category"
+      @dishes = Dish.where(sql_query, query: "%#{params[:query]}%", category: "%#{params[:category]}%")
+    else
+      @dishes = Dish.all
+    end
   end
 
   def show
