@@ -2,6 +2,7 @@ class RestaurantsController < ApplicationController
  before_action :set_restaurant, only: [ :show, :edit, :update, :destroy ]
 
   def show
+    @markers = [{ lat: @restaurant.latitude, lng: @restaurant.longitude }]
   end
 
   def new

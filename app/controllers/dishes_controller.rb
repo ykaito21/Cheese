@@ -1,5 +1,6 @@
 class DishesController < ApplicationController
   before_action :set_dish, only: [ :show, :edit, :update, :destroy ]
+
   def index
     if params[:query].present? || params[:category].present?
       sql_query = "name ILIKE :query AND category ILIKE :category"
@@ -12,6 +13,7 @@ class DishesController < ApplicationController
   def show
     @restaurant = @dish.restaurant
     @order = Order.new
+    @markers = [{ lat: @restaurant.latitude, lng: @restaurant.longitude }]
   end
 
   def new
@@ -43,7 +45,6 @@ class DishesController < ApplicationController
   def destroy
     @dish.destroy
     redirect_to restaurant_dishes_path
-
   end
 
 
