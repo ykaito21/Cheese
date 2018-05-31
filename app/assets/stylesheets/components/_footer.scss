@@ -1,11 +1,17 @@
 .footer {
-  background: #F4F4F4;
+  margin-top: 40px;
+  background: #7a828b;
+  color: #fff !important;
+  padding: 20px 50px;
+  text-align: center;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
+}
+.footer .copyright {
+  color: #fff;
+}
+.footer .cheese-logo img {
+  margin-bottom: 10px;
 }
 .footer-links {
   display: flex;
