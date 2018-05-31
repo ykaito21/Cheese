@@ -3,6 +3,7 @@ before_action :set_order, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @orders = Order.where(user: current_user)
+    @orders_sorted = @orders.sort_by { |order| - order.date.to_i }
   end
 
   def show

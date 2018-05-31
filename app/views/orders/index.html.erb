@@ -3,7 +3,7 @@
     <h1> Your Order </h1>
   </div>
   <div class="row">
-    <% @orders.each do |order| %>
+    <% @orders_sorted.each do |order| %>
       <div class="row text-center">
         <div class="dish-img-area col-xs-12 col-md-6">
           <img src='<%= order.dish.photo %>' class="float-left">
@@ -14,6 +14,7 @@
             <p> Quantity: <%= order.quantity %></p>
             <p> Restaurant: <%= order.dish.restaurant.name %></p>
             <p> Address: <%= order.dish.restaurant.address %></p>
+            <p> Reservation: <%= order.date %>
           </div>
         </div>
         </div>
