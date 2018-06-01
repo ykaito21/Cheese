@@ -9,11 +9,12 @@
   justify-content: center;
   margin-bottom: 32px;
 }
-.banner h1 {
-  font-size: 50px;
-  font-weight: bold;
+.banner .page-title {
+  letter-spacing: 9px;
+  font-size: 100px;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   font-family: 'Pacifico', cursive;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
 }
 .banner p {
   font-size: 25px;
