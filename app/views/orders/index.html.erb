@@ -15,7 +15,7 @@
             <p> Restaurant: <%= order.dish.restaurant.name %></p>
             <p> Address: <%= order.dish.restaurant.address %></p>
             <p> Reservation: <%= order.date.strftime("%A, %b %d") %>
-            <%= link_to dish_order_path(order.dish, order), class: "btn btn-secondary btn-lg", method: :delete do %>
+            <%= link_to dish_order_path(order.dish, order), class: "btn btn-secondary btn-lg", method: :delete, data: { confirm: "Are you sure?" } do %>
               <i class="far fa-trash-alt"></i>
             <% end %>
           </div>
