@@ -12,7 +12,14 @@
   width: 60px;
   height: 60px;
 }
-
+a {
+  color: $light-green;
+}
+a:hover {
+  color: $light-green;
+  opacity: 0.8;
+  text-decoration: none;
+}
 a.cheese-logo:hover img {
   opacity: 0.8;
 }

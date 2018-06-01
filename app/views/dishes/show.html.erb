@@ -1,31 +1,32 @@
 <div class="container dishshow">
-    <div class="info-container row">
-      <div class="col-xs-12">
-        <h2><%= @dish.name %><span class="price">¥<%= @dish.price %></span> [ <%= link_to @dish.restaurant.name, restaurant_path(@restaurant) %> ] </h2>
+    <div class="top-container row">
+      <div class="col-xs-12 title-area">
+        <h2><i class="fas fa-utensils"></i><%= @dish.name %><span class="price">¥<%= @dish.price %></span><span class="restaurant-title"><%= link_to @dish.restaurant.name, restaurant_path(@restaurant) %></span></h2>
         <p><%= @dish.description %></p>
       </div>
-      <div class="dish-img-area col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
-        <%= cl_image_tag @dish.photo %>
+      <div class="dish-banner col-xs-12" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @dish.photo %>');">
+        <div class="dish-category"><%= @dish.category %></div>
+        <div class="dish-description">
+          <h2><%= @dish.name %><span class="price">¥<%= @dish.price %></span></h2>
+          <p><%= @dish.restaurant.name %></p>
+          </div>
       </div>
     </div>
-    <div class="row">
-      <div class="dish-img-area col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+    <div class="row bottom-container">
+      <div class="col-xs-12 col-md-6 map-container">
+        <h3><i class="fas fa-map-marker"></i><%= link_to @dish.restaurant.name, restaurant_path(@restaurant) %><span class="address"><%= @dish.restaurant.address %></span></h3>
         <div id="map" style="width: 100%; height: 300px;"data-markers="<%= @markers.to_json %>">
         </div>
       </div>
-    </div>
-  <div class="row form-area">
-    <div class="form-row">
-      <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
-      <div class="form-dish-name">
-        <p class="form-item-title">
-          <%= @dish.name %><span class="price">¥<%= @dish.price %></span>
-        </p>
-      </div>
-      <div>
-        <%= render "orders/form", order: @order %>
+
+      <div class="form-area col-xs-12 col-md-6">
+        <h3><i class="far fa-calendar-check"></i>Order now</h3>
+          <div class="form-content">
+            <p class="form-item-title">
+              <%= @dish.name %><span class="price">¥<%= @dish.price %></span>
+            </p>
+            <%= render "orders/form", order: @order %>
+          </div>
       </div>
     </div>
-    </div>
-  </div>
 </div>
