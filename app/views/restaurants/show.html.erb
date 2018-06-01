@@ -1,45 +1,54 @@
 <div class="container restaurantshow">
-    <h2><%= @restaurant.name %>
-    </h2>
-    <table class="table table-bordered">
-      <tbody>
-        <tr>
-          <th>phone number</th>
-          <td><%= @restaurant.phone_number %></td>
-        </tr>
-        <tr>
-          <th>address</th>
-          <td><%= @restaurant.address %></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div>
+  <div class="title-area">
+    <h2><%= @restaurant.name %></h2>
+    <div class="link-area">
       <% if current_user == @restaurant.user %>
-        <%= link_to "Add a dish", new_restaurant_dish_path(@restaurant), class: "btn btn-primary btn-lg" %>
-        <%= link_to "Edit", edit_restaurant_path(@restaurant), class: "btn btn-secondary btn-lg" %>
-        <%= link_to 'Delete', restaurant_path(@restaurant), class: "btn btn-secondary btn-lg", method: :delete %>
+        <%= link_to "Edit |", edit_restaurant_path(@restaurant), class: "" %>
+        <%= link_to 'Delete', restaurant_path(@restaurant), class: "", method: :delete %>
       <% end %>
     </div>
+  </div>
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <th>phone number</th>
+        <td><%= @restaurant.phone_number %></td>
+      </tr>
+      <tr>
+        <th>address</th>
+        <td><%= @restaurant.address %></td>
+      </tr>
+    </tbody>
+  </table>
 
-
-    <div class="dish-container">
-      <div class="row">
-        <% @restaurant.dishes.each do |dish| %>
-          <div class="col-xs-12 col-sm-4">
-            <%= link_to dish_path(dish) do %>
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= dish.photo %>');">
-              <div class="card-category"><%= dish.category %></div>
-              <div class="card-description">
-                <h2><%= dish.name %></h2>
-                <p><%= dish.restaurant.name %>
-              </div>
-            </div>
-            <% end %>
-          </div>
+  <div class="dish-container">
+    <div class="title-area">
+      <h2><i class="fas fa-utensils"></i>dishes</h2>
+      <div class="link-area pull-right">
+        <% if current_user == @restaurant.user %>
+          <%= link_to "Add a dish", new_restaurant_dish_path(@restaurant), class: "btn btn-primary btn-lg" %>
         <% end %>
       </div>
     </div>
+    <div class="row">
+      <% @restaurant.dishes.each do |dish| %>
+        <div class="col-xs-12 col-sm-4">
+          <%= link_to dish_path(dish) do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= dish.photo %>');">
+            <div class="card-category"><%= dish.category %></div>
+            <div class="card-description">
+              <h2><%= dish.name %></h2>
+              <p><%= dish.restaurant.name %></p>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="map-container">
+    <h2><i class="fas fa-map-marker"></i>map</h2>
+     <div id="map" style="width: 100%; height: 300px;"data-markers="<%= @markers.to_json %>"></div>
+  </div>
 </div>
 
-<div id="map" style="width: 100%; height: 300px;"data-markers="<%= @markers.to_json %>"></div>

@@ -1,3 +1,30 @@
-.restaurantshow .table th {
-  width: 30%;
+.restaurantshow {
+  .table th {
+    width: 30%;
+  }
+  .dish-container {
+    margin-bottom: 40px;
+    .title-area {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0;
+    }
+    .card {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  .title-area {
+    display: flex;
+    align-items: center;
+    i {
+      margin-right: 15px;
+    }
+    .link-area {
+      margin-top: 25px;
+      margin-bottom: 12.5px;
+      margin-left: 10px;
+    }
+  }
 }
