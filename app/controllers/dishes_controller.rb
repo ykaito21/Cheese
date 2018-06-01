@@ -6,7 +6,7 @@ class DishesController < ApplicationController
       sql_query = "name ILIKE :query AND category ILIKE :category"
       @dishes = Dish.where(sql_query, query: "%#{params[:query]}%", category: "%#{params[:category]}%")
     else
-      @dishes = Dish.all
+      @dishes = Dish.all.sort_by { |dish| - dish.id }
     end
   end
 
