@@ -1,26 +1,35 @@
 <div class="container">
   <div class="text-center">
-    <h1> Your Orders </h1>
+    <h1>Your Orders</h1>
   </div>
-  <div class="row">
+
     <% @orders_sorted.each do |order| %>
-      <div class="row text-center">
-        <div class="dish-img-area col-xs-12 col-md-6">
-          <img src='<%= order.dish.photo %>' class="float-left">
-        </div>
-        <div class="dish-img-area col-xs-12 col-md-6">
-          <div class="orders-text-wrap">
-            <h3> Order: <%= order.dish.name %></h3>
-            <p> Quantity: <%= order.quantity %></p>
-            <p> Restaurant: <%= order.dish.restaurant.name %></p>
-            <p> Address: <%= order.dish.restaurant.address %></p>
-            <p> Reservation: <%= order.date.strftime("%A, %b %d") %>
-            <%= link_to dish_order_path(order.dish, order), class: "btn btn-secondary btn-lg", method: :delete do %>
-              <i class="far fa-trash-alt"></i>
-            <% end %>
+      <div class="row dish-container">
+        <div class="col-xs-12 col-md-6">
+          <div class="dish-img-area" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= order.dish.photo %>');">
+            <div class="dish-category"><%= order.dish.category %></div>
+            <div class="dish-description">
+              <h2><%= order.dish.name %><span class="price">¥<%= order.dish.price %></span></h2>
+              <p><%= order.dish.restaurant.name %></p>
+            </div>
           </div>
         </div>
-      <% end %>
-  </div>
+
+        <div class="col-xs-12 col-md-6">
+          <div class="orders-text-wrap">
+            <h3><%= order.dish.name %>
+                <%= link_to dish_order_path(order.dish, order), class: "btn btn-secondary btn-lg", method: :delete do %>
+                  <i class="far fa-trash-alt"></i>
+                <% end %>
+            </h3>
+            <p><span class="bold">Quantity:</span><%= order.quantity %></p>
+            <p><span class="bold">Restaurant:</span><%= order.dish.restaurant.name %></p>
+            <p><span class="bold">Address:</span><%= order.dish.restaurant.address %></p>
+            <p><span class="bold">Reservation:</span><%= order.date.strftime("%A, %b %d") %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
 </div>
 

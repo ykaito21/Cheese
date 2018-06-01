@@ -1,3 +1,17 @@
-#img-wrapper {
-  width: 400px;
+.dish-img-area {
+  height: 400px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.bold {
+  font-weight: bold;
+  margin-right: 5px;
+}
+h1 {
+  margin-bottom: 20px;
 }
