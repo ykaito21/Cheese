@@ -18,9 +18,9 @@
         <div class="col-xs-12 col-md-6">
           <div class="orders-text-wrap">
             <h3><%= order.dish.name %>
-                <%= link_to dish_order_path(order.dish, order), class: "btn btn-secondary btn-lg", method: :delete do %>
-                  <i class="far fa-trash-alt"></i>
-                <% end %>
+              <%= link_to dish_order_path(order.dish, order), class: "btn btn-secondary btn-lg", method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
             </h3>
             <p><span class="bold">Quantity:</span><%= order.quantity %></p>
             <p><span class="bold">Restaurant:</span><%= order.dish.restaurant.name %></p>
