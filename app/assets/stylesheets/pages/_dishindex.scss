@@ -1,0 +1,10 @@
+.navbar-wagon .search-container {
+  display: none;
+  body.action-name-show & {
+    display: block;
+  }
+}
+
+.search-container.show-search-container {
+  display: block;
+}
