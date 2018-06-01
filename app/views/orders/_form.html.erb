@@ -1,5 +1,5 @@
 <%= simple_form_for [@dish, @order] do |f| %>
-  <%= f.input :quantity %>
+  <%= f.input :quantity, input_html: {value: f.object.quantity || '1'} %>
   <%= f.input :date, id: "order_date" %>
   <%= f.button :submit, "Order", class: "btn btn-warning btn-block"%>
 <% end %>
