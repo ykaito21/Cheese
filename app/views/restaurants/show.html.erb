@@ -4,7 +4,7 @@
     <div class="link-area">
       <% if current_user == @restaurant.user %>
         <%= link_to "Edit |", edit_restaurant_path(@restaurant), class: "" %>
-        <%= link_to 'Delete', restaurant_path(@restaurant), class: "", method: :delete %>
+        <%= link_to 'Delete', restaurant_path(@restaurant), class: "", method: :delete, data: { confirm: "Are you sure?" }  %>
       <% end %>
     </div>
   </div>
